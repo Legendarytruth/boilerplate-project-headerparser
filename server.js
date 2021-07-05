@@ -25,7 +25,10 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-
+app.get("/api/whoami", (req,res) => {
+  console.log({ipaddress:req.connection.remoteAddress, language:"eng", software: "test"})
+  res.json({ipaddress:req.connection.remoteAddress, language:"eng", software: "test"})
+})
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
